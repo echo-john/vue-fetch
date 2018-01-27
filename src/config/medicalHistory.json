@@ -1,0 +1,52 @@
+{
+  "formName": "Medical History",
+  "fields": [{
+    "name": "vomiting",
+      "component": "FormSelect",
+      "options": ["yes", "no"],
+      "subFields": [{
+          "name": "duration",
+          "component": "FormSelect",
+          "default":"hours",
+          "options": [{
+            "label": "Hours",
+            "value": "hours"
+          },{
+            "label": "Days",
+            "value": "days"
+          },{
+            "label": "Months",
+            "value" : "months"
+          }]
+        },
+        {
+          "name": "frequency",
+          "component": "FormText",
+          "placeholder": "ie: twice an hour"
+        },
+        {
+          "name": "content",
+          "component": "FormText",
+          "placeholder": "ie: house plants"
+        },
+        {
+          "name": "notes",
+          "component": "FormText",
+          "placeholder": "enter notes"
+        },
+        {
+          "name": "Day of Week",
+          "component": "FormSelect",
+          "condition": "duration.value === 'days'",
+          "options": [{
+            "label": "Sunday",
+            "value": "sun"
+          },{
+            "label": "Monday",
+            "value": "mon"
+          }]
+        }
+      ]         
+  }]
+}
+
