@@ -35,9 +35,9 @@
           "placeholder": "enter notes"
         },
         {
-          "name": "Day of Week",
+          "name": "dayOfWeek",
           "component": "FormSelect",
-          "condition": "duration.value === 'days'",
+          "condition": "console.log(this); this.form.duration === 'days'",
           "options": [{
             "label": "Sunday",
             "value": "sun"

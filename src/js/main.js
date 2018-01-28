@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Field from '@/components/Field'
 import FormText from '@/components/FormText'
 import FormSelect from '@/components/FormSelect'
 
@@ -10,6 +11,7 @@ import '../scss/style.scss'
 Vue.config.productionTip = false
 
 const components = [
+  Field,
   FormText,
   FormSelect
 ]

@@ -1,17 +1,18 @@
 <template>
-  <input type="text" v-model="fieldValue" @change="emitChange" :placeholder="data.placeholder" :name="data.name" />
+  <input
+    type="text"
+    v-model="fieldValue"
+    @change="emitChange"
+    :placeholder="data.placeholder"
+    :name="data.name" />
 </template>
+
+<!--/////////////////////////////////////////////////////////////////////////-->
 
 <script>
 export default {
   name: 'FormText',
   props: {
-    // name: {
-    //   type: String
-    // },
-    // placeholder: {
-    //   type: String
-    // },
     value: {
       type: String
     },
@@ -21,22 +22,18 @@ export default {
   },
   data () {
     return {
-      fieldValue : this.value
+      fieldValue: this.value
     }
   },
   methods: {
     emitChange () {
-      this.$emit('input',this.fieldValue)
+      this.$emit('input', this.fieldValue)
     }
-  },
-  computed: {
-    
-  },
-  created () {
-
   }
 }
 </script>
+
+<!--/////////////////////////////////////////////////////////////////////////-->
 
 <style scoped lang="scss">
 

@@ -1,8 +1,10 @@
 <template>
   <select @change="emitChange" v-model="fieldValue">
-    <option :value="option.value" v-for="(option, key) in data.options" :key="key">{{ option.label }}</option>  
-  </select>   
+    <option :value="option.value" v-for="(option, key) in data.options" :key="key">{{ option.label }}</option>
+  </select>
 </template>
+
+<!--/////////////////////////////////////////////////////////////////////////-->
 
 <script>
 export default {
@@ -12,29 +14,29 @@ export default {
       type: Object
     },
     value: {
-      type: String
+      type: [String, Boolean]
     }
   },
   data () {
     return {
-      fieldValue : this.value
+      fieldValue: this.value
     }
   },
   methods: {
     emitChange () {
-      this.$emit('input',this.fieldValue)
+      this.$emit('input', this.fieldValue)
     }
   },
-  computed: {
-   
-  },
   created () {
-    if(this.data.default !== undefined){
+    if (this.data.default !== undefined) {
       this.fieldValue = this.data.default
+      this.emitChange()
     }
   }
 }
 </script>
+
+<!--/////////////////////////////////////////////////////////////////////////-->
 
 <style scoped lang="scss">
 
